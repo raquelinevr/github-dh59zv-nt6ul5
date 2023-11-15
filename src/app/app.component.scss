@@ -1,0 +1,29 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.half-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.card-insercao-usuario {
+  background-color: rgb(227, 241, 104);
+  margin-right: 5px;
+  max-width: 50%; /* Ocupa metade da largura */
+}
+
+.mat-card-simples {
+  background-color: aliceblue;
+  margin-bottom: 10px;
+  width: calc(100% - 10px); /* Ocupa toda a largura com margem */
+}

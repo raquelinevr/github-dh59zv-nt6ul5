@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seu Título</title>
+  <link rel="stylesheet" href="seu-estilo.css">
+</head>
+<body>
+  <div class="container">
+    <app-menu>{{ titulo }}</app-menu>
+
+    <mat-card class="half-container card-insercao-usuario">
+      <mat-card-header class="center-header">
+        <mat-card-title>Inserir Disco</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="fill" class="mat-form-simples">
+          <mat-label>Nome do Disco</mat-label>
+          <input matInput [(ngModel)]="usuario.nome" placeholder="Nome do Disco" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="mat-form-simples">
+          <mat-label>Nome do Artista</mat-label>
+          <input matInput [(ngModel)]="usuario.cpf" placeholder="Nome do Artista" />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-footer align="center">
+        <button mat-raised-button mat-icon-button color="primary" (click)="inserirUsuario()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-card-footer>
+    </mat-card>
+
+    <div class="half-container cards-container">
+      <mat-card *ngFor="let usuario of usuarios" class="mat-card-simples">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>music_note</mat-icon>
+            {{ usuario.nome }}
+          </mat-card-title>
+          <mat-card-subtitle *ngIf="usuario.cpf">Artista: {{ usuario.cpf }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          Os discos, além de serem veículos de música, são expressões artísticas que transcendem o tempo.
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <!-- Seu script Angular ou outras dependências -->
+</body>
+</html>
